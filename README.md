@@ -53,7 +53,7 @@ Please follow the instructions to prepare the dataset:
 ```
 
 ### Run the code
-- Go to ```train.sh``` file and change your output directory name ```YOUR_OUTPUT_DIR_NAME```
+- Go to ```train.sh``` file and change ```YOUR_OUTPUT_DIR_NAME``` to your output directory name 
 - run ```bash train.sh```
 
 
