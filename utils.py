@@ -43,8 +43,6 @@ def print_data_split_summary(split_name: str, split_data: list):
         print(genre, sample_num)
 
 
-
-
 def load_split_dataframe(data_split_filename: str, data_dir: str):
     """
     Create dataframe for train, dev, test based on input data split file
@@ -53,7 +51,6 @@ def load_split_dataframe(data_split_filename: str, data_dir: str):
 
     :return: train_dataframe, dev_dataframe, test_dataframe
     """
-    # TODO comment back
     # Dataframe: {"audio_filename": [], "label": []}
 
     train_dataframe = {}
@@ -63,10 +60,6 @@ def load_split_dataframe(data_split_filename: str, data_dir: str):
     for i in range(3):
         split_name = f.readline().replace(":\n", "")
         split_data = f.readline().replace("['", "").replace("']", "").strip().split("', '")
-
-        # TODO
-        print_data_split_summary(split_name, split_data)
-        continue
 
         temp_audio_filenames = []
         temp_labels = []
@@ -85,9 +78,11 @@ def load_split_dataframe(data_split_filename: str, data_dir: str):
                 original_filename=f"{genre}/{genre}.{file_id}.wav"
             )
 
+            # w/o data augmentation
             # temp_audio_filenames.append(genre + '/' + genre + '.' + file_id + ".wav")
             # temp_labels.append(genre)
 
+            # w/ data augmentation
             temp_audio_filenames.extend(audio_segment_names)
             temp_labels.extend([genre] * len(audio_segment_names))
 
@@ -98,13 +93,7 @@ def load_split_dataframe(data_split_filename: str, data_dir: str):
         else:
             test_dataframe = pd.DataFrame({"audio_filename": temp_audio_filenames, "label": temp_labels})
 
-
     f.close()
-    raise ValueError("Finish report")
-
-    # train_dataframe = pd.read_pickle(os.path.join(data_dir, "train_dataframe.pkl"))
-    # dev_dataframe = pd.read_pickle(os.path.join(data_dir, "dev_dataframe.pkl"))
-    # test_dataframe = pd.read_pickle(os.path.join(data_dir, "test_dataframe.pkl"))
 
     return train_dataframe, dev_dataframe, test_dataframe
 
