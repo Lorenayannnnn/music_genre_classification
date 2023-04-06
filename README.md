@@ -64,4 +64,5 @@ Please follow the instructions to prepare the dataset:
 
 
 ### Performance & Conclusion
-The final accuracy is approximately 74%. Although it is lower than accuracy of existing works, this performance is still much higher than random guessing, which is 10% given that the used dataset has 10 genres in total. This result can be used to illustrate the connections among human brain, music, and language to some extent, as the result indicates that a model that is originally for processing human speech is able to learn the underlying music features of input raw audios. 
+- For experiment results, please go to the [google sheet](https://docs.google.com/spreadsheets/d/1qA18J-7PjgydmwdFhpavdlmgKMQObeT50xbEw9NHqRw/edit?usp=sharing) for more details.
+- The final accuracy is approximately 74%. Although it is lower than accuracy of existing works, this performance is still much higher than random guessing, which is 10% given that the used dataset has 10 genres in total. This result can be used to illustrate the connections among human brain, music, and language to some extent, as the result indicates that a model that is originally for processing human speech is able to learn the underlying music features of input raw audios. 
